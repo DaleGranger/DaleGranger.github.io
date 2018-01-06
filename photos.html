@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta charset="utf-8" />
+<title>Gallery</title>
+
+
+<style>
+
+
+body {margin:0;
+	background-color: #696969;
+	font-family: Courier new, sans-serif;}
+
+p.h2{
+	font-size: 2em;
+	text-align: justify;
+
+}
+
+h1 {
+	text-align: center;
+	color: #ffffff;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 2.5em;
+}
+
+p {
+	color: #ffffff;
+	padding-left: 2cm;
+}
+
+
+#logo { float: left; }
+#fb { float: right; }
+#twit { float: right; } 
+#mail { float: right; } 
+
+
+#nav
+     {
+      background: url() no-repeat scroll top left;     background-color: black;
+     width:100%;
+     height:80px;
+      box-shadow: 0px 1px 10px #5E5E5E;
+      position:fixed;
+      top:0px;
+    }
+
+.title
+ {
+display:none;
+ color:#ffffff;
+ font-family:Courier new;
+ font-size:25px;
+ width:350px;
+ margin-top:6px;
+ margin-left:150px;
+ font-weight:bold;
+ float:left;
+}
+
+
+#navigation
+{
+ list-style-type:none; 
+}
+
+
+li 
+{ 
+
+float: left;
+ padding:15px;
+ }
+#nav a
+{
+font-size: 1.6em;
+text-transform: uppercase;
+ font-weight: bold;
+ font-family:Courier New;
+  text-decoration:none;
+ color: #FFFFFF;
+} 
+ #nav a:hover 
+{
+opacity:0.36;
+}
+
+
+body {
+  padding: 30px 0;
+  position: relative;
+}
+
+.gallery {
+  width: 600px;
+  margin: auto;
+  border-radius: 3px;
+  overflow: hidden;
+  //position: relative;
+}
+.img-c {
+  width: 200px;
+  height: 200px;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.img-w {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: transform ease-in-out 300ms;
+}
+
+.img-w img {
+  display: none;
+}
+
+.img-c {
+    transition: width ease 400ms, height ease 350ms, left cubic-bezier(0.4, 0, 0.2, 1) 420ms, top cubic-bezier(0.4, 0, 0.2, 1) 420ms;
+}
+
+.img-c:hover .img-w {
+  transform: scale(1.08);
+  transition: transform cubic-bezier(0.4, 0, 0.2, 1) 450ms;
+}
+
+.img-c.active {
+  width: 90% !important;
+  height: 90% !important;
+  position: absolute;;
+  margin-top: 100px;
+  margin-left:  100px;
+  z-index: 2;
+  //transform: translateX(-50%);
+}
+
+.img-c.postactive {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.img-c.active.positioned {
+  left: 0 !important;
+  top: 0 !important;
+  transition-delay: 50ms;
+}
+
+p.heading {
+	position: relative;
+	left:810px;
+	font-weight:bold;
+	font-size:2.5em;
+}
+	
+</style>
+
+</head>
+
+
+<body>
+
+
+
+
+<div id='nav'>
+    <a href="Main.html"><img src="homeicon.jpg" alt="home" id="logo"></a>
+	<a href="mailto:someone@example.com"> <img src="mailicon.jpg" alt="mail" id="mail" /></a>
+	<a href="https://twitter.com/pinkfloyd?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <img src="twiticon.jpg" alt="twite" id="twit" /></a>
+	<a href="https://en-gb.facebook.com/pinkfloyd/"> <img src="fbicon.jpg" alt="fb" id="fb" /></a>
+  <ul id='navigation'>
+    <li class='navigation-Blog'><a href='news.html'>News</a></li>
+    <li class='navigation-Promos'><a href='merch.html'>Clothing</a></li>
+    <li class='navigation-Tricks'><a href='about.html'>Demo</a></li>
+    <li class='navigation-Parties'><a href='#photos.html'>Gallery</a></li>
+  </ul>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+<div class="gallery">
+  <div class="img-w">
+    <img src="gallery_img/photo5.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo1.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo2.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo3.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo4.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo6.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo7.jpg" alt="" /></div>
+  <div class="img-w"><img src="Gallery_img/photo8.jpg" alt="" /></div>
+</div>
+
+
+
+<script>
+
+$(function() {
+  $(".img-w").each(function() {
+    $(this).wrap("<div class='img-c'></div>")
+    let imgSrc = $(this).find("img").attr("src");
+     $(this).css('background-image', 'url(' + imgSrc + ')');
+  })
+            
+  
+  $(".img-c").click(function() {
+    let w = $(this).outerWidth()
+    let h = $(this).outerHeight()
+    let x = $(this).offset().left
+    let y = $(this).offset().top
+    
+    
+    $(".active").not($(this)).remove()
+    let copy = $(this).clone();
+    copy.insertAfter($(this)).height(h).width(w).delay(500).addClass("active")
+    $(".active").css('top', y - 8);
+    $(".active").css('left', x - 8);
+    
+      setTimeout(function() {
+    copy.addClass("positioned")
+  }, 0)
+    
+  }) 
+  
+  
+
+  
+})
+
+$(document).on("click", ".img-c.active", function() {
+  let copy = $(this)
+  copy.removeClass("positioned active").addClass("postactive")
+  setTimeout(function() {
+    copy.remove();
+  }, 500)
+})
+
+</script>
