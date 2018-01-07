@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta charset="utf-8" />
+<title>NewsPage</title>
+
+
+<style>
+
+
+body {margin:0;
+	background-color: #696969;
+	font-family: Courier new, sans-serif;}
+
+p.h2{
+	font-size: 2em;
+	text-align: justify;
+
+}
+
+.h1 {
+	text-align: center;
+	color: #00BFFF;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 1.3em;
+}
+
+p {
+	color: #ffffff;
+	padding-left: 2cm;
+}
+
+
+#logo { float: left; }
+#fb { float: right; }
+#twit { float: right; } 
+#mail { float: right; } 
+
+
+#nav
+     {
+      background: url() no-repeat scroll top left;     background-color: black;
+     width:100%;
+     height:80px;
+      box-shadow: 0px 1px 10px #00BFFF;
+      position:fixed;
+      top:0px
+	  
+    }
+
+.title
+ {
+display:none;
+ color:#ffffff;
+ font-family:Courier new;
+ font-size:25px;
+ width:350px;
+ margin-top:6px;
+ margin-left:150px;
+ font-weight:bold;
+ float:left;
+}
+
+
+#navigation
+{
+ list-style-type:none; 
+}
+
+
+li 
+{ 
+
+float: left;
+ padding:15px;
+ }
+#nav a
+{
+font-size: 1.6em;
+text-transform: uppercase;
+ font-weight: bold;
+ font-family:Courier New;
+  text-decoration:none;
+ color: #FFFFFF;
+} 
+ #nav a:hover 
+{
+opacity:0.36;
+}
+
+
+button:hover
+{
+	opacity:0.8;
+}
+
+.row
+{
+	position:relative;
+}
+
+.left.row
+{
+	z-index:3;
+}
+
+.right.row
+{
+	z-index:2;
+}
+
+
+
+
+#selector-box
+{
+	margin:0px auto;
+	display:block;
+	margin-top:50px;
+	text-align:center;
+	border-radius:2px;
+	padding:5px;
+	border:1px solid #ddd;
+	width:250px;
+	font-family:monospace;
+}
+
+.container
+{
+	height:400px;
+	float: left;
+	border-radius:5px;
+	margin-left: 1em;
+}
+
+.midtext
+{
+	margin-left:auto;
+	margin-right:auto;
+	font-size:2em;
+	font-family: arial;
+	text-align: center;
+	font-weight: bold;
+	color: black;
+	text-shadow: 0 0 3px #00BFFF;
+}
+.midtext1
+{
+	margin-left:auto;
+	margin-right:auto;
+	font-size:1em;
+	font-family: arial;
+	text-align: center;
+	font-weight: bold;
+	color: black;
+	text-shadow: 0 0 5px #00BFFF;
+}
+
+.firstline
+{
+	text-align:center;
+    border:1px solid #666;
+}
+
+
+.secondline
+{
+	text-align:center;
+    
+    border:1px solid #666;
+}
+
+
+
+
+button
+{
+	border:none;
+	background-color:#eee;
+	padding:10px;
+	border-radius:2px;
+	cursor:pointer;
+}
+
+main
+{
+	padding:25px;
+	min-width:600px;
+	width:650px;
+	height: 500px;
+	margin-left:2em;
+	border-radius:5px;
+	margin-top:100px;
+	background-color: white;
+	overflow:auto;
+	float: left;
+}
+
+section
+{
+	padding:25px;
+	min-width:600px;
+	width:650px;
+	height: 500px;
+	margin-right:2em;
+	border-radius:5px;
+	margin-top:100px;
+	background-color: white;
+	overflow:auto;
+	float: right;
+}
+
+
+
+.row > img
+{
+	vertical-align:middle;
+	z-index: 1;
+}
+.row
+{
+	margin:0px auto;
+	text-align:center;
+}
+
+div.gallery {
+    border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+    border: 3px solid black;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+	font-family: arial;
+	color: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 0 40px;
+	padding-bottom: 40px;
+	float:left;
+    width: 23%;
+}
+
+@media only screen and (max-width: 700px){
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   font-family: arial;
+   background-color: #333;
+   color: white;
+   text-align: center;
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+
+
+<div id='nav' style="z-index:999999">
+    <a href="Main.html"><img src="Gallery_img/homeicon.jpg" alt="home" id="logo"></a>
+	<a href="mailto:someone@example.com"> <img src="Gallery_img/mailicon.jpg" alt="mail" id="mail" /></a>
+	<a href="https://twitter.com/pinkfloyd?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <img src="Gallery_img/twiticon.jpg" alt="twite" id="twit" /></a>
+	<a href="https://en-gb.facebook.com/pinkfloyd/"> <img src="Gallery_img/fbicon.jpg" alt="fb" id="fb" /></a>
+  <ul id='navigation'>
+    <li class='navigation-Blog'><a href='news.html'>News</a></li>
+    <li class='navigation-Promos'><a href='merch.html'>Clothing</a></li>
+    <li class='navigation-Tricks'><a href='about.html'>Demo</a></li>
+    <li class='navigation-Parties'><a href='photos.html'>Gallery</a></li>
+  </ul>
+</div>
+
+
+
+<script>
+//Images of different t-shirt for left selector.
+var leftImages = 
+[
+	"img_clothing/tshirt1.jpg", 
+	"img_clothing/tshirt2.jpg", 
+	"img_clothing/tshirt3.jpg",
+];
+
+//Images of different t-shirt for right selector.
+var rightImages = 
+[
+	"img_clothing/tshirt1.jpg", 
+	"img_clothing/tshirt2.jpg", 
+	"img_clothing/tshirt3.jpg",
+];
+
+
+var leftIndex, rightIndex
+
+//Set them all to 0
+leftIndex = rightIndex = 0;
+
+//The current head We will change the image of these elements.
+var leftImage, rightImage;
+
+// Called when the page first load
+window.onload = function()
+{
+	//Get each element for the head, torso and legs.
+	leftImage  = document.getElementById("left-image");
+	rightImage  = document.getElementById("right-image");
+	
+	//Set images initially
+	onBodyChanged();
+}
+
+
+
+
+
+// Updates the selector box text with the current left and right value
+function updateSelectorBox()
+{
+	//Get the element we're going to change
+	var selectorBox = document.getElementById("selector-box");
+	
+	//Set it's value to nothing, reset it.
+	selectorBox.value = "";
+	
+	//Finally, just append each index to the string
+	selectorBox.value += ("left: " + leftIndex  + " | ");
+	selectorBox.value += ("right: " + rightIndex  + " | ");
+}
+
+
+//Called when left image changed
+function onLeftChange(offset)
+{
+	//Find the index which is offset from the current left index
+	var offsetIndex = (leftIndex + offset);
+	
+	//If it's negative, set the index to the last image:
+	if(offsetIndex < 0)
+		leftIndex = leftImages.length + offset;
+	
+	else
+		leftIndex = (leftIndex + offset) % leftImages.length;
+	
+	//Callback
+	onBodyChanged();
+}
+
+//Called when right image is changed
+function onRightChange(offset)
+{
+	var offsetIndex = (rightIndex + offset);
+	
+	if(offsetIndex < 0)
+		rightIndex = rightImages.length + offset;
+	
+	else
+		rightIndex = (rightIndex + offset) % rightImages.length;
+	
+	//Callback
+	onBodyChanged();
+}
+
+
+function onBodyChanged()
+{
+	updateSelectorBox();
+	
+	//Sets image
+	leftImage.src = leftImages[leftIndex];
+	rightImage.src = rightImages[rightIndex];
+}
+
+
+
+</script>
+
+
+		<main>
+			<div class="container">
+				<div class="left row">
+					<img id="left-image" alt="clothing1" src="images/x.png" />
+					<button class="left-button" onclick="onLeftChange(-1)">&laquo;</button>
+					<button class="right-button" onclick="onLeftChange(+1)">&raquo;</button>
+				</div>
+			</div>
+			
+			<input id="selector-box" type="text" value="h: 0 | t: 0 | l: 0" readonly />
+			
+
+			
+		</main>
+		
+
+		<section>
+			<div class="container">
+				<div class="right row">
+					<img id="right-image" alt="clothing2" src="images/x.png"/>
+					<button class="left-button" onclick="onRightChange(-1)">&laquo;</button>
+					<button class="right-button" onclick="onRightChange(+1)">&raquo;</button>
+				</div>
+			</div>
+			
+
+			
+		</section>
+<p class="midtext"><br><br><br><br><br><br><br><br><br>Compare Items!<br>
+</p>
+<p class="midtext1">Featured Items</p>
+
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt.jpg">
+      <img src="img_clothing/tshirt.jpg" alt="" width="300" height="200">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt4.jpg">
+      <img src="img_clothing/tshirt4.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt5.jpg">
+      <img src="img_clothing/tshirt5.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt6.jpg">
+      <img src="img_clothing/tshirt6.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<br> <br> <br> <br> <br>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt7.jpg">
+      <img src="img_clothing/tshirt7.jpg" alt="" width="300" height="200">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt3.jpg">
+      <img src="img_clothing/tshirt3.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc"> Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt2.jpg">
+      <img src="img_clothing/tshirt2.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt1.jpg">
+      <img src="img_clothing/tshirt1.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<br> <br> <br> <br> <br>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt7.jpg">
+      <img src="img_clothing/tshirt7.jpg" alt="" width="300" height="200">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt3.jpg">
+      <img src="img_clothing/tshirt3.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc"> Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt2.jpg">
+      <img src="img_clothing/tshirt2.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<div class="responsive" style="padding-left: 100px">
+  <div class="gallery">
+    <a target="_blank" href="img_clothing/tshirt1.jpg">
+      <img src="img_clothing/tshirt1.jpg" alt="" width="600" height="400">
+    </a>
+    <div class="desc">Pink Floyd High Hopes<br>£35.00 - £40.00</div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+
+
+</body>
+
+
