@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta charset="utf-8" />
+<title>NewsPage</title>
+
+
+<style>
+
+
+body {margin:0;
+	background-color: #696969;
+	font-family: Courier new, sans-serif;}
+
+p.h2{
+	font-size: 2em;
+	text-align: justify;
+
+}
+
+.h1 {
+	text-align: center;
+	color: #00BFFF;
+	font-family: arial;
+	font-weight: bold;
+	font-size: 1.6em;
+}
+
+p {
+	color: #ffffff;
+	padding-left: 2cm;
+}
+
+
+#logo { float: left; }
+#fb { float: right; }
+#twit { float: right; } 
+#mail { float: right; } 
+
+
+#nav
+     {
+      background: url() no-repeat scroll top left;     background-color: black;
+     width:100%;
+     height:80px;
+      box-shadow: 0px 1px 10px #00BFFF;
+      position:fixed;
+      top:0px;
+    }
+
+.title
+ {
+display:none;
+ color:#ffffff;
+ font-family:Courier new;
+ font-size:25px;
+ width:350px;
+ margin-top:6px;
+ margin-left:150px;
+ font-weight:bold;
+ float:left;
+}
+
+
+#navigation
+{
+ list-style-type:none; 
+}
+
+
+li 
+{ 
+
+float: left;
+ padding:15px;
+ }
+#nav a
+{
+font-size: 1.6em;
+text-transform: uppercase;
+ font-weight: bold;
+ font-family:Courier New;
+  text-decoration:none;
+ color: #FFFFFF;
+} 
+ #nav a:hover 
+{
+opacity:0.36;
+}
+
+.newstext{
+	margin-left: 300px;
+	margin-right: 300px;
+	font-family: arial;
+	font-size: 1.3em;
+}
+
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   font-family: arial;
+   background-color: #333;
+   color: white;
+   text-align: center;
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+
+
+<div id='nav'>
+    <a href="Main.html"><img src="Gallery_img/homeicon.jpg" alt="home" id="logo"></a>
+	<a href="mailto:someone@example.com"> <img src="Gallery_img/mailicon.jpg" alt="mail" id="mail" /></a>
+	<a href="https://twitter.com/pinkfloyd?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"> <img src="Gallery_img/twiticon.jpg" alt="twite" id="twit" /></a>
+	<a href="https://en-gb.facebook.com/pinkfloyd/"> <img src="Gallery_img/fbicon.jpg" alt="fb" id="fb" /></a>
+  <ul id='navigation'>
+    <li class='navigation-Blog'><a href='news.html'>News</a></li>
+    <li class='navigation-Promos'><a href='merch.html'>Clothing</a></li>
+    <li class='navigation-Tricks'><a href='about.html'>Demo</a></li>
+    <li class='navigation-Parties'><a href='photos.html'>Gallery</a></li>
+  </ul>
+</div>
+
+<br><br><br><br><br><br><br>
+<iframe style="display:block; margin: 0 auto;" width="854" height="480" src="https://www.youtube.com/embed/6g1pG3md8QM" frameborder="0" allowfullscreen></iframe>
+<br><br>
+
+<h1 class="h1">Website Critical Log</h1>
+<p class="newstext"><br><br>URL: https://DaleGranger.github.io/Main.html<br><br>In this log I am going to be detailing how best practice was identified, appraised and applied during the development of my website. The development of my website has been a huge learning curve and I am going to try and describe the process and details of this development, while also providing proof of testing and error checking.
+<br><br>When I first started developing the site the first issue I came up against was what structure should I be using for each page and whether to use inline CSS, internal CSS or external CSS file. I concluded that I would use mainly internal CSS as then each page could have its own unique style if needed, and thought it would be easier to manage, after developing much of my site I soon realised that an external CSS file would have been better practice for this as it is much quicker to make changes/manage site, although for the design and functions in my webpages internal CSS was perfectly acceptable and did everything I needed only with a little extra work.
+<br><br>Another best practice I discovered was the organisation of my CSS, while editing the site I found it much easier to find elements if they were all organised from top to bottom and giving appropriate identifiers for example the footer element would be at the bottom of the stylesheet.
+<br><br>Another example of best practice I found while building my website was compressing images as the whole page could be slowed down if there are a lot of large images (Large as in file-size). So I would use a compression tool online to reduce image file size to ensure quicker loading times.
+<br><br>Another show of best practice would be markup consistency, after coming across multiple issues because I have had a /P> instead of p> I soon realised it was down to the capital letters. So, it is always good to double check your markup consistency to reduce time later searching for errors. Also another issue I came across with capital letters was file locations and file names are all case sensitive when using GitHub to upload your website, so it is also best practice to show consistency across all areas of development.
+<br><br>An example of bad practice when it comes to html would be to overuse div containers, this can be quite difficult as div containers are a huge tool when it comes to html and it can be very useful to layer multiple div containers, but also very messy so I always try to use fewer divs.
+<br><br>Knowing the correct element for the job is a huge part of web development as many elements could potentially be used for one particular section, for example p> … /p could be used instead of h1 …./h1 , but this could confuse other developers and make the code harder to read. Another best practice example would be to know when to use ID’s and when to use classes as ID’s are limited to one use per page whereas are not specific.
+<br><br>Now to move onto html compared to html5, they have some major differences some bad and some good, an example of a helpful improvement was that html5 now allows javascript to run within the web browser instead of running in the browser interface thread, which was helpful as my site uses multiple JS functions. Also, many virtual graphics are supported within HTML5 but not HTML like SVG and canvas. HTML5 has also introduced many new elements which helped me organise and separate my code much easier, (header & footer).
+<br><br>Now let’s compare CSS3 with it predecessor, firstly the CSS3 color module is very useful also with opacity, the newer version of CSS enables developers to do many different things which you would have needed JS in the older version, all the additional modules within CSS3 helped me with my website as you can now specify timer properties and keyframes to create animation using CSS, which can be seen within my site. There are much more updated features than what I have listed but you can see that CSS3 is basically a whole new set of features that increase your creative power while developing the website.</p>
+<br><br><br>
+
+<h1 class="h1">Validation:</h1>
+<p class="newstext">After I had finished my first draft of the website now was the time to validate so I went to https://validator.w3.org and uploaded each webpage and checked for errors:</p>
+<br>
+<div class="h1"><img src="Gallery_img/w3valid.jpg" alt=""></div>
+<br>
+<p class="newstext">Once the validator has been run you will be displayed with a list of errors example above, so now I worked through each individual error and resolved it then run the validator again to check the resolution was successful. (see below for evidence of resolved issues):</p>
+<br>
+<div class="h1"><img src="Gallery_img/w3valid1.jpg" alt=""></div>
+<br><br>
+<p class="newstext">As you can see from the screenshot above I have resolved all errors on this page, I repeated the steps for each webpage and resolved all errors shown.</p>
+
+
+
+
+<script>
+
+</script>
+
+
+
+
+</body>
+
